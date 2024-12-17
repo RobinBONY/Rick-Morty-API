@@ -1,0 +1,6 @@
+{
+  "appTitle": "R&M API",
+  "@appTitle": {
+    "description": "The Rick and Morty API"
+  }
+}
