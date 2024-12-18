@@ -51,6 +51,8 @@ jobs:
         #8 Building Web App
       - name: Build Web
         uses: bluefireteam/flutter-gh-pages@v8
+        with:
+          baseHref: /Rick-Morty-API/
 
       - name: Compress Archives and IPAs
         run: |
