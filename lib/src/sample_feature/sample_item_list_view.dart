@@ -8,7 +8,7 @@ import 'sample_item_details_view.dart';
 /// Displays a list of SampleItems.
 
 class SampleItemListView extends StatefulWidget {
-  SampleItemListView({super.key});
+  const SampleItemListView({super.key});
 
   static const routeName = '/';
 
