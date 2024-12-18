@@ -11,7 +11,6 @@ class CharacterService extends Service {
 
     List<Map<String, dynamic>> objects = await super.get(
         '${Constants.baseURL}${Constants.characterEndpoint}$prefs');
-    print(objects);
     return List<Character>.from(objects.map((x) => Character.fromJson(x)));
   }
 
