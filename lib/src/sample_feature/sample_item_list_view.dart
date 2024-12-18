@@ -7,12 +7,18 @@ import 'sample_item_details_view.dart';
 
 /// Displays a list of SampleItems.
 
-class SampleItemListView extends StatelessWidget {
+class SampleItemListView extends StatefulWidget {
   SampleItemListView({super.key});
 
   static const routeName = '/';
 
+  @override
+  State<SampleItemListView> createState() => _SampleItemListViewState();
+}
+
+class _SampleItemListViewState extends State<SampleItemListView> {
   late List<Character>? _items;
+
   int page = 1;
 
   final _controller = ScrollController();
