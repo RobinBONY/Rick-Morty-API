@@ -27,7 +27,7 @@ class _SampleItemListViewState extends State<SampleItemListView> {
   Widget build(BuildContext context) {
     _controller.addListener(() {
       if (_controller.position.atEdge && _controller.position.pixels != 0) {
-        CharacterService().getCharactersPage(page++).then((result) => _items=  result);
+        CharacterService().getCharactersPage(page++).then((result) => _items =  result);
       }
     });
     return FutureBuilder(
@@ -53,7 +53,7 @@ class _SampleItemListViewState extends State<SampleItemListView> {
               restorationId: 'sampleItemListView',
               itemCount: _items?.length,
               itemBuilder: (BuildContext context, int index) {
-                final item = _items?[index];
+                final item = _items?.elementAt(index);
                 return ListTile(
                   title: Text(item!.name),
                   leading: CircleAvatar(
