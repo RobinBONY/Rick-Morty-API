@@ -67,10 +67,10 @@ class _CharactersViewState extends State<CharactersView> {
     });
     return  GridView(
         addAutomaticKeepAlives: true,
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(12),
         controller: _controller,
         restorationId: 'charactersGridView',
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
         children: [
           for ( var character in _characters ) CharacterCard(character: character)
         ],

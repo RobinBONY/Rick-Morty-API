@@ -11,6 +11,7 @@ final characterSpeciesValues = {
 final characterStatusValues = {
   CharacterStatus.alive: "Alive",
   CharacterStatus.dead: "Dead",
+  CharacterStatus.unknown: "unknown",
   CharacterStatus.empty: "",
 };
 
