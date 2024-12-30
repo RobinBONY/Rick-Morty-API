@@ -12,7 +12,7 @@ class StatusView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color color = Colors.grey;
-    switch (this._status) {
+    switch (_status) {
       case ('Alive'):
         color = Colors.green;
       case ('Dead'):
