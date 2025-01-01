@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/src/graphql/query/character.graphql.dart';
+import 'package:flutter_application/src/models/character.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
@@ -24,59 +25,74 @@ class CharactersView extends HookWidget {
           return Center(child: CircularProgressIndicator());
         }
 
-        var data = result.data;
-        var queryData = Query$FetchCharacters.fromJson(data!);
+        if (result.hasException) {
+          return Text('\nErrors: \n  ${result.exception}');
+        }
 
-        var results = queryData.characters?.results ?? [];
-        var pageInfo = queryData.characters?.info;
-
-        if (results.isEmpty) {
+        if (result.data == null) {
           return Center(child: Text('Aucun personnage trouvé.'));
         }
 
-        // Listener pour fetchMore quand on atteint la fin de la liste
-        useEffect(() {
-          scrollController.addListener(() {
+        final List<dynamic> characters =
+            (result.data?['characters']['results'] as List<dynamic>);
+
+        final Map pageInfo = result.data?['characters']['info'];
+
+        final int next = pageInfo['next'];
+
+        FetchMoreOptions opts = FetchMoreOptions(
+          variables: {
+            'page': next,
+          },
+          updateQuery: (previousResultData, fetchMoreResultData) {
+            final List<dynamic> res = [
+              ...previousResultData?['characters']['results'],
+              ...fetchMoreResultData?['characters']['results'],
+            ];
+
+            fetchMoreResultData?['characters']['results'] = res;
+
+            return fetchMoreResultData;
+          },
+        );
+
+        List characters0 = parseCharacters(characters);
+
+        return NotificationListener<ScrollEndNotification>(
+          onNotification: (t) {
             if (scrollController.position.pixels ==
                     scrollController.position.maxScrollExtent &&
-                fetchMore != null &&
-                queryData.characters?.info.next != null) {
-              fetchMore(FetchMoreOptions(
-                  updateQuery: (previousResultData, fetchMoreResultData) {
-                    final List<dynamic> res = [
-                      ...previousResultData?['characters']['results'],
-                      ...fetchMoreResultData?['characters']['results'],
-                    ];
-
-                    previousResultData?['characters']['results'] = res;
-
-                    return previousResultData;
-                  },
-                  variables: {
-                    'page': pageInfo!.next,
-                  }));
+                fetchMore != null) {
+              fetchMore(opts);
             }
-          });
-          return scrollController.dispose; // Nettoyage
-        }, [scrollController, fetchMore]);
-
-        return ListView.builder(
-          controller: scrollController,
-          itemCount: results.length,
-          itemBuilder: (context, index) {
-            final character = results[index];
-            return ListTile(
-              leading: CircleAvatar(
-                backgroundImage: NetworkImage(character!.image),
-              ),
-              title: Text(character.name),
-              subtitle: Text(
-                'Status: ${character.status}\nSpecies: ${character.species}',
-              ),
-            );
+            return true;
           },
+          child: ListView.builder(
+            controller: scrollController,
+            itemCount: characters0.length,
+            itemBuilder: (context, index) {
+              final character = characters0[index];
+              return ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(character.image),
+                ),
+                title: Text(character.name),
+                subtitle: Text(
+                  'Status: ${character.status}\nSpecies: ${character.species}',
+                ),
+              );
+            },
+          ),
         );
       },
     );
+  }
+
+  List parseCharacters(List characters) {
+    List result = [];
+    for (var character in characters) {
+      result.add(Character.fromJson(character));
+    }
+    return result;
   }
 }
