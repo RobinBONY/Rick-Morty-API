@@ -1,12 +1,24 @@
 # .lib/src/grapql/schema/schema.graphql
 
 type Query {
-    characters(page: Int!): ResultCharacter
+    characters(page: Int!): ResponseCharacters
+    episodes(page: Int!): ResponseEpisodes
+    locations(page: Int!): ResponseLocations
 }
 
-type ResultCharacter {
+type ResponseCharacters {
     info: Info!
     results: [Character]
+}
+
+type ResponseLocations {
+    info: Info!
+    results: [Location]
+}
+
+type ResponseEpisodes {
+    info: Info!
+    results: [Episode]
 }
 
 type Info {

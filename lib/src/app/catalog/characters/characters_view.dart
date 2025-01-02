@@ -1,6 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/src/graphql/query/character.graphql.dart';
-import 'package:flutter_application/src/models/character.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
@@ -38,7 +38,7 @@ class CharactersView extends HookWidget {
 
         final Map pageInfo = result.data?['characters']['info'];
 
-        final int next = pageInfo['next'];
+        final int? next = pageInfo['next'];
 
         FetchMoreOptions opts = FetchMoreOptions(
           variables: {
@@ -56,43 +56,49 @@ class CharactersView extends HookWidget {
           },
         );
 
-        List characters0 = parseCharacters(characters);
-
         return NotificationListener<ScrollEndNotification>(
           onNotification: (t) {
             if (scrollController.position.pixels ==
                     scrollController.position.maxScrollExtent &&
-                fetchMore != null) {
+                fetchMore != null && next != null) {
               fetchMore(opts);
             }
             return true;
           },
-          child: ListView.builder(
-            controller: scrollController,
-            itemCount: characters0.length,
-            itemBuilder: (context, index) {
-              final character = characters0[index];
-              return ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage(character.image),
-                ),
-                title: Text(character.name),
-                subtitle: Text(
-                  'Status: ${character.status}\nSpecies: ${character.species}',
-                ),
-              );
+          child: RefreshIndicator(
+            onRefresh: () async {
+              if (refetch != null) {
+                refetch();
+              }
+              await Future.delayed(Duration(seconds: 3));
             },
+            child: ScrollConfiguration(
+              behavior: ScrollConfiguration.of(context).copyWith(
+                dragDevices: {
+                  PointerDeviceKind.touch,
+                  PointerDeviceKind.mouse,
+                },
+              ),
+              child: ListView.builder(
+                controller: scrollController,
+                itemCount: characters.length,
+                itemBuilder: (context, index) {
+                  final character = characters[index];
+                  return ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: NetworkImage(character['image']),
+                    ),
+                    title: Text(character['name']),
+                    subtitle: Text(
+                      'Status: ${character['status']}\nSpecies: ${character['species']}',
+                    ),
+                  );
+                },
+              ),
+            ),
           ),
         );
       },
     );
-  }
-
-  List parseCharacters(List characters) {
-    List result = [];
-    for (var character in characters) {
-      result.add(Character.fromJson(character));
-    }
-    return result;
   }
 }

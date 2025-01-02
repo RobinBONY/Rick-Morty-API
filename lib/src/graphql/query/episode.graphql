@@ -1,0 +1,16 @@
+# .lib/src/grapql/query/episode.graphql
+
+query FetchEpisodes($page: Int!) {
+  episodes(page: $page) {
+    info {
+      count: count
+      next: next
+    }
+    results {
+      id: id
+      name: name
+      air_date: air_date
+      episode: episode
+    }
+  }
+}

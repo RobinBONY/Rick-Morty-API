@@ -1,18 +1,18 @@
 import 'package:gql/ast.dart';
 
-class Variables$Query$FetchCharacters {
-  factory Variables$Query$FetchCharacters({required int page}) =>
-      Variables$Query$FetchCharacters._({
+class Variables$Query$FetchEpisodes {
+  factory Variables$Query$FetchEpisodes({required int page}) =>
+      Variables$Query$FetchEpisodes._({
         r'page': page,
       });
 
-  Variables$Query$FetchCharacters._(this._$data);
+  Variables$Query$FetchEpisodes._(this._$data);
 
-  factory Variables$Query$FetchCharacters.fromJson(Map<String, dynamic> data) {
+  factory Variables$Query$FetchEpisodes.fromJson(Map<String, dynamic> data) {
     final result$data = <String, dynamic>{};
     final l$page = data['page'];
     result$data['page'] = (l$page as int);
-    return Variables$Query$FetchCharacters._(result$data);
+    return Variables$Query$FetchEpisodes._(result$data);
   }
 
   Map<String, dynamic> _$data;
@@ -26,8 +26,8 @@ class Variables$Query$FetchCharacters {
     return result$data;
   }
 
-  CopyWith$Variables$Query$FetchCharacters<Variables$Query$FetchCharacters>
-      get copyWith => CopyWith$Variables$Query$FetchCharacters(
+  CopyWith$Variables$Query$FetchEpisodes<Variables$Query$FetchEpisodes>
+      get copyWith => CopyWith$Variables$Query$FetchEpisodes(
             this,
             (i) => i,
           );
@@ -37,7 +37,7 @@ class Variables$Query$FetchCharacters {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Variables$Query$FetchCharacters ||
+    if (other is! Variables$Query$FetchEpisodes ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -56,73 +56,73 @@ class Variables$Query$FetchCharacters {
   }
 }
 
-abstract class CopyWith$Variables$Query$FetchCharacters<TRes> {
-  factory CopyWith$Variables$Query$FetchCharacters(
-    Variables$Query$FetchCharacters instance,
-    TRes Function(Variables$Query$FetchCharacters) then,
-  ) = _CopyWithImpl$Variables$Query$FetchCharacters;
+abstract class CopyWith$Variables$Query$FetchEpisodes<TRes> {
+  factory CopyWith$Variables$Query$FetchEpisodes(
+    Variables$Query$FetchEpisodes instance,
+    TRes Function(Variables$Query$FetchEpisodes) then,
+  ) = _CopyWithImpl$Variables$Query$FetchEpisodes;
 
-  factory CopyWith$Variables$Query$FetchCharacters.stub(TRes res) =
-      _CopyWithStubImpl$Variables$Query$FetchCharacters;
+  factory CopyWith$Variables$Query$FetchEpisodes.stub(TRes res) =
+      _CopyWithStubImpl$Variables$Query$FetchEpisodes;
 
   TRes call({int? page});
 }
 
-class _CopyWithImpl$Variables$Query$FetchCharacters<TRes>
-    implements CopyWith$Variables$Query$FetchCharacters<TRes> {
-  _CopyWithImpl$Variables$Query$FetchCharacters(
+class _CopyWithImpl$Variables$Query$FetchEpisodes<TRes>
+    implements CopyWith$Variables$Query$FetchEpisodes<TRes> {
+  _CopyWithImpl$Variables$Query$FetchEpisodes(
     this._instance,
     this._then,
   );
 
-  final Variables$Query$FetchCharacters _instance;
+  final Variables$Query$FetchEpisodes _instance;
 
-  final TRes Function(Variables$Query$FetchCharacters) _then;
+  final TRes Function(Variables$Query$FetchEpisodes) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? page = _undefined}) =>
-      _then(Variables$Query$FetchCharacters._({
+      _then(Variables$Query$FetchEpisodes._({
         ..._instance._$data,
         if (page != _undefined && page != null) 'page': (page as int),
       }));
 }
 
-class _CopyWithStubImpl$Variables$Query$FetchCharacters<TRes>
-    implements CopyWith$Variables$Query$FetchCharacters<TRes> {
-  _CopyWithStubImpl$Variables$Query$FetchCharacters(this._res);
+class _CopyWithStubImpl$Variables$Query$FetchEpisodes<TRes>
+    implements CopyWith$Variables$Query$FetchEpisodes<TRes> {
+  _CopyWithStubImpl$Variables$Query$FetchEpisodes(this._res);
 
   TRes _res;
 
   call({int? page}) => _res;
 }
 
-class Query$FetchCharacters {
-  Query$FetchCharacters({
-    this.characters,
+class Query$FetchEpisodes {
+  Query$FetchEpisodes({
+    this.episodes,
     this.$__typename = 'Query',
   });
 
-  factory Query$FetchCharacters.fromJson(Map<String, dynamic> json) {
-    final l$characters = json['characters'];
+  factory Query$FetchEpisodes.fromJson(Map<String, dynamic> json) {
+    final l$episodes = json['episodes'];
     final l$$__typename = json['__typename'];
-    return Query$FetchCharacters(
-      characters: l$characters == null
+    return Query$FetchEpisodes(
+      episodes: l$episodes == null
           ? null
-          : Query$FetchCharacters$characters.fromJson(
-              (l$characters as Map<String, dynamic>)),
+          : Query$FetchEpisodes$episodes.fromJson(
+              (l$episodes as Map<String, dynamic>)),
       $__typename: (l$$__typename as String),
     );
   }
 
-  final Query$FetchCharacters$characters? characters;
+  final Query$FetchEpisodes$episodes? episodes;
 
   final String $__typename;
 
   Map<String, dynamic> toJson() {
     final _resultData = <String, dynamic>{};
-    final l$characters = characters;
-    _resultData['characters'] = l$characters?.toJson();
+    final l$episodes = episodes;
+    _resultData['episodes'] = l$episodes?.toJson();
     final l$$__typename = $__typename;
     _resultData['__typename'] = l$$__typename;
     return _resultData;
@@ -130,10 +130,10 @@ class Query$FetchCharacters {
 
   @override
   int get hashCode {
-    final l$characters = characters;
+    final l$episodes = episodes;
     final l$$__typename = $__typename;
     return Object.hashAll([
-      l$characters,
+      l$episodes,
       l$$__typename,
     ]);
   }
@@ -143,12 +143,12 @@ class Query$FetchCharacters {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Query$FetchCharacters || runtimeType != other.runtimeType) {
+    if (other is! Query$FetchEpisodes || runtimeType != other.runtimeType) {
       return false;
     }
-    final l$characters = characters;
-    final lOther$characters = other.characters;
-    if (l$characters != lOther$characters) {
+    final l$episodes = episodes;
+    final lOther$episodes = other.episodes;
+    if (l$episodes != lOther$episodes) {
       return false;
     }
     final l$$__typename = $__typename;
@@ -160,85 +160,85 @@ class Query$FetchCharacters {
   }
 }
 
-extension UtilityExtension$Query$FetchCharacters on Query$FetchCharacters {
-  CopyWith$Query$FetchCharacters<Query$FetchCharacters> get copyWith =>
-      CopyWith$Query$FetchCharacters(
+extension UtilityExtension$Query$FetchEpisodes on Query$FetchEpisodes {
+  CopyWith$Query$FetchEpisodes<Query$FetchEpisodes> get copyWith =>
+      CopyWith$Query$FetchEpisodes(
         this,
         (i) => i,
       );
 }
 
-abstract class CopyWith$Query$FetchCharacters<TRes> {
-  factory CopyWith$Query$FetchCharacters(
-    Query$FetchCharacters instance,
-    TRes Function(Query$FetchCharacters) then,
-  ) = _CopyWithImpl$Query$FetchCharacters;
+abstract class CopyWith$Query$FetchEpisodes<TRes> {
+  factory CopyWith$Query$FetchEpisodes(
+    Query$FetchEpisodes instance,
+    TRes Function(Query$FetchEpisodes) then,
+  ) = _CopyWithImpl$Query$FetchEpisodes;
 
-  factory CopyWith$Query$FetchCharacters.stub(TRes res) =
-      _CopyWithStubImpl$Query$FetchCharacters;
+  factory CopyWith$Query$FetchEpisodes.stub(TRes res) =
+      _CopyWithStubImpl$Query$FetchEpisodes;
 
   TRes call({
-    Query$FetchCharacters$characters? characters,
+    Query$FetchEpisodes$episodes? episodes,
     String? $__typename,
   });
-  CopyWith$Query$FetchCharacters$characters<TRes> get characters;
+  CopyWith$Query$FetchEpisodes$episodes<TRes> get episodes;
 }
 
-class _CopyWithImpl$Query$FetchCharacters<TRes>
-    implements CopyWith$Query$FetchCharacters<TRes> {
-  _CopyWithImpl$Query$FetchCharacters(
+class _CopyWithImpl$Query$FetchEpisodes<TRes>
+    implements CopyWith$Query$FetchEpisodes<TRes> {
+  _CopyWithImpl$Query$FetchEpisodes(
     this._instance,
     this._then,
   );
 
-  final Query$FetchCharacters _instance;
+  final Query$FetchEpisodes _instance;
 
-  final TRes Function(Query$FetchCharacters) _then;
+  final TRes Function(Query$FetchEpisodes) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
-    Object? characters = _undefined,
+    Object? episodes = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$FetchCharacters(
-        characters: characters == _undefined
-            ? _instance.characters
-            : (characters as Query$FetchCharacters$characters?),
+      _then(Query$FetchEpisodes(
+        episodes: episodes == _undefined
+            ? _instance.episodes
+            : (episodes as Query$FetchEpisodes$episodes?),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
       ));
 
-  CopyWith$Query$FetchCharacters$characters<TRes> get characters {
-    final local$characters = _instance.characters;
-    return local$characters == null
-        ? CopyWith$Query$FetchCharacters$characters.stub(_then(_instance))
-        : CopyWith$Query$FetchCharacters$characters(
-            local$characters, (e) => call(characters: e));
+  CopyWith$Query$FetchEpisodes$episodes<TRes> get episodes {
+    final local$episodes = _instance.episodes;
+    return local$episodes == null
+        ? CopyWith$Query$FetchEpisodes$episodes.stub(_then(_instance))
+        : CopyWith$Query$FetchEpisodes$episodes(
+            local$episodes, (e) => call(episodes: e));
   }
 }
 
-class _CopyWithStubImpl$Query$FetchCharacters<TRes>
-    implements CopyWith$Query$FetchCharacters<TRes> {
-  _CopyWithStubImpl$Query$FetchCharacters(this._res);
+class _CopyWithStubImpl$Query$FetchEpisodes<TRes>
+    implements CopyWith$Query$FetchEpisodes<TRes> {
+  _CopyWithStubImpl$Query$FetchEpisodes(this._res);
 
   TRes _res;
 
   call({
-    Query$FetchCharacters$characters? characters,
+    Query$FetchEpisodes$episodes? episodes,
     String? $__typename,
   }) =>
       _res;
 
-  CopyWith$Query$FetchCharacters$characters<TRes> get characters =>
-      CopyWith$Query$FetchCharacters$characters.stub(_res);
+  CopyWith$Query$FetchEpisodes$episodes<TRes> get episodes =>
+      CopyWith$Query$FetchEpisodes$episodes.stub(_res);
 }
 
-const documentNodeQueryFetchCharacters = DocumentNode(definitions: [
+const documentNodeQueryFetchEpisodes = DocumentNode(definitions: [
   OperationDefinitionNode(
     type: OperationType.query,
-    name: NameNode(value: 'FetchCharacters'),
+    name: NameNode(value: 'FetchEpisodes'),
     variableDefinitions: [
       VariableDefinitionNode(
         variable: VariableNode(name: NameNode(value: 'page')),
@@ -253,7 +253,7 @@ const documentNodeQueryFetchCharacters = DocumentNode(definitions: [
     directives: [],
     selectionSet: SelectionSetNode(selections: [
       FieldNode(
-        name: NameNode(value: 'characters'),
+        name: NameNode(value: 'episodes'),
         alias: null,
         arguments: [
           ArgumentNode(
@@ -313,22 +313,15 @@ const documentNodeQueryFetchCharacters = DocumentNode(definitions: [
                 selectionSet: null,
               ),
               FieldNode(
-                name: NameNode(value: 'status'),
-                alias: NameNode(value: 'status'),
+                name: NameNode(value: 'air_date'),
+                alias: NameNode(value: 'air_date'),
                 arguments: [],
                 directives: [],
                 selectionSet: null,
               ),
               FieldNode(
-                name: NameNode(value: 'species'),
-                alias: NameNode(value: 'species'),
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: 'image'),
-                alias: NameNode(value: 'image'),
+                name: NameNode(value: 'episode'),
+                alias: NameNode(value: 'episode'),
                 arguments: [],
                 directives: [],
                 selectionSet: null,
@@ -362,33 +355,33 @@ const documentNodeQueryFetchCharacters = DocumentNode(definitions: [
   ),
 ]);
 
-class Query$FetchCharacters$characters {
-  Query$FetchCharacters$characters({
+class Query$FetchEpisodes$episodes {
+  Query$FetchEpisodes$episodes({
     required this.info,
     this.results,
-    this.$__typename = 'ResponseCharacters',
+    this.$__typename = 'ResponseEpisodes',
   });
 
-  factory Query$FetchCharacters$characters.fromJson(Map<String, dynamic> json) {
+  factory Query$FetchEpisodes$episodes.fromJson(Map<String, dynamic> json) {
     final l$info = json['info'];
     final l$results = json['results'];
     final l$$__typename = json['__typename'];
-    return Query$FetchCharacters$characters(
-      info: Query$FetchCharacters$characters$info.fromJson(
+    return Query$FetchEpisodes$episodes(
+      info: Query$FetchEpisodes$episodes$info.fromJson(
           (l$info as Map<String, dynamic>)),
       results: (l$results as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : Query$FetchCharacters$characters$results.fromJson(
+              : Query$FetchEpisodes$episodes$results.fromJson(
                   (e as Map<String, dynamic>)))
           .toList(),
       $__typename: (l$$__typename as String),
     );
   }
 
-  final Query$FetchCharacters$characters$info info;
+  final Query$FetchEpisodes$episodes$info info;
 
-  final List<Query$FetchCharacters$characters$results?>? results;
+  final List<Query$FetchEpisodes$episodes$results?>? results;
 
   final String $__typename;
 
@@ -420,7 +413,7 @@ class Query$FetchCharacters$characters {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Query$FetchCharacters$characters ||
+    if (other is! Query$FetchEpisodes$episodes ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -454,48 +447,48 @@ class Query$FetchCharacters$characters {
   }
 }
 
-extension UtilityExtension$Query$FetchCharacters$characters
-    on Query$FetchCharacters$characters {
-  CopyWith$Query$FetchCharacters$characters<Query$FetchCharacters$characters>
-      get copyWith => CopyWith$Query$FetchCharacters$characters(
+extension UtilityExtension$Query$FetchEpisodes$episodes
+    on Query$FetchEpisodes$episodes {
+  CopyWith$Query$FetchEpisodes$episodes<Query$FetchEpisodes$episodes>
+      get copyWith => CopyWith$Query$FetchEpisodes$episodes(
             this,
             (i) => i,
           );
 }
 
-abstract class CopyWith$Query$FetchCharacters$characters<TRes> {
-  factory CopyWith$Query$FetchCharacters$characters(
-    Query$FetchCharacters$characters instance,
-    TRes Function(Query$FetchCharacters$characters) then,
-  ) = _CopyWithImpl$Query$FetchCharacters$characters;
+abstract class CopyWith$Query$FetchEpisodes$episodes<TRes> {
+  factory CopyWith$Query$FetchEpisodes$episodes(
+    Query$FetchEpisodes$episodes instance,
+    TRes Function(Query$FetchEpisodes$episodes) then,
+  ) = _CopyWithImpl$Query$FetchEpisodes$episodes;
 
-  factory CopyWith$Query$FetchCharacters$characters.stub(TRes res) =
-      _CopyWithStubImpl$Query$FetchCharacters$characters;
+  factory CopyWith$Query$FetchEpisodes$episodes.stub(TRes res) =
+      _CopyWithStubImpl$Query$FetchEpisodes$episodes;
 
   TRes call({
-    Query$FetchCharacters$characters$info? info,
-    List<Query$FetchCharacters$characters$results?>? results,
+    Query$FetchEpisodes$episodes$info? info,
+    List<Query$FetchEpisodes$episodes$results?>? results,
     String? $__typename,
   });
-  CopyWith$Query$FetchCharacters$characters$info<TRes> get info;
+  CopyWith$Query$FetchEpisodes$episodes$info<TRes> get info;
   TRes results(
-      Iterable<Query$FetchCharacters$characters$results?>? Function(
+      Iterable<Query$FetchEpisodes$episodes$results?>? Function(
               Iterable<
-                  CopyWith$Query$FetchCharacters$characters$results<
-                      Query$FetchCharacters$characters$results>?>?)
+                  CopyWith$Query$FetchEpisodes$episodes$results<
+                      Query$FetchEpisodes$episodes$results>?>?)
           _fn);
 }
 
-class _CopyWithImpl$Query$FetchCharacters$characters<TRes>
-    implements CopyWith$Query$FetchCharacters$characters<TRes> {
-  _CopyWithImpl$Query$FetchCharacters$characters(
+class _CopyWithImpl$Query$FetchEpisodes$episodes<TRes>
+    implements CopyWith$Query$FetchEpisodes$episodes<TRes> {
+  _CopyWithImpl$Query$FetchEpisodes$episodes(
     this._instance,
     this._then,
   );
 
-  final Query$FetchCharacters$characters _instance;
+  final Query$FetchEpisodes$episodes _instance;
 
-  final TRes Function(Query$FetchCharacters$characters) _then;
+  final TRes Function(Query$FetchEpisodes$episodes) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -504,71 +497,71 @@ class _CopyWithImpl$Query$FetchCharacters$characters<TRes>
     Object? results = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$FetchCharacters$characters(
+      _then(Query$FetchEpisodes$episodes(
         info: info == _undefined || info == null
             ? _instance.info
-            : (info as Query$FetchCharacters$characters$info),
+            : (info as Query$FetchEpisodes$episodes$info),
         results: results == _undefined
             ? _instance.results
-            : (results as List<Query$FetchCharacters$characters$results?>?),
+            : (results as List<Query$FetchEpisodes$episodes$results?>?),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
       ));
 
-  CopyWith$Query$FetchCharacters$characters$info<TRes> get info {
+  CopyWith$Query$FetchEpisodes$episodes$info<TRes> get info {
     final local$info = _instance.info;
-    return CopyWith$Query$FetchCharacters$characters$info(
+    return CopyWith$Query$FetchEpisodes$episodes$info(
         local$info, (e) => call(info: e));
   }
 
   TRes results(
-          Iterable<Query$FetchCharacters$characters$results?>? Function(
+          Iterable<Query$FetchEpisodes$episodes$results?>? Function(
                   Iterable<
-                      CopyWith$Query$FetchCharacters$characters$results<
-                          Query$FetchCharacters$characters$results>?>?)
+                      CopyWith$Query$FetchEpisodes$episodes$results<
+                          Query$FetchEpisodes$episodes$results>?>?)
               _fn) =>
       call(
           results: _fn(_instance.results?.map((e) => e == null
               ? null
-              : CopyWith$Query$FetchCharacters$characters$results(
+              : CopyWith$Query$FetchEpisodes$episodes$results(
                   e,
                   (i) => i,
                 )))?.toList());
 }
 
-class _CopyWithStubImpl$Query$FetchCharacters$characters<TRes>
-    implements CopyWith$Query$FetchCharacters$characters<TRes> {
-  _CopyWithStubImpl$Query$FetchCharacters$characters(this._res);
+class _CopyWithStubImpl$Query$FetchEpisodes$episodes<TRes>
+    implements CopyWith$Query$FetchEpisodes$episodes<TRes> {
+  _CopyWithStubImpl$Query$FetchEpisodes$episodes(this._res);
 
   TRes _res;
 
   call({
-    Query$FetchCharacters$characters$info? info,
-    List<Query$FetchCharacters$characters$results?>? results,
+    Query$FetchEpisodes$episodes$info? info,
+    List<Query$FetchEpisodes$episodes$results?>? results,
     String? $__typename,
   }) =>
       _res;
 
-  CopyWith$Query$FetchCharacters$characters$info<TRes> get info =>
-      CopyWith$Query$FetchCharacters$characters$info.stub(_res);
+  CopyWith$Query$FetchEpisodes$episodes$info<TRes> get info =>
+      CopyWith$Query$FetchEpisodes$episodes$info.stub(_res);
 
   results(_fn) => _res;
 }
 
-class Query$FetchCharacters$characters$info {
-  Query$FetchCharacters$characters$info({
+class Query$FetchEpisodes$episodes$info {
+  Query$FetchEpisodes$episodes$info({
     required this.count,
     required this.next,
     this.$__typename = 'Info',
   });
 
-  factory Query$FetchCharacters$characters$info.fromJson(
+  factory Query$FetchEpisodes$episodes$info.fromJson(
       Map<String, dynamic> json) {
     final l$count = json['count'];
     final l$next = json['next'];
     final l$$__typename = json['__typename'];
-    return Query$FetchCharacters$characters$info(
+    return Query$FetchEpisodes$episodes$info(
       count: (l$count as int),
       next: (l$next as int),
       $__typename: (l$$__typename as String),
@@ -609,7 +602,7 @@ class Query$FetchCharacters$characters$info {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Query$FetchCharacters$characters$info ||
+    if (other is! Query$FetchEpisodes$episodes$info ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -632,24 +625,23 @@ class Query$FetchCharacters$characters$info {
   }
 }
 
-extension UtilityExtension$Query$FetchCharacters$characters$info
-    on Query$FetchCharacters$characters$info {
-  CopyWith$Query$FetchCharacters$characters$info<
-          Query$FetchCharacters$characters$info>
-      get copyWith => CopyWith$Query$FetchCharacters$characters$info(
+extension UtilityExtension$Query$FetchEpisodes$episodes$info
+    on Query$FetchEpisodes$episodes$info {
+  CopyWith$Query$FetchEpisodes$episodes$info<Query$FetchEpisodes$episodes$info>
+      get copyWith => CopyWith$Query$FetchEpisodes$episodes$info(
             this,
             (i) => i,
           );
 }
 
-abstract class CopyWith$Query$FetchCharacters$characters$info<TRes> {
-  factory CopyWith$Query$FetchCharacters$characters$info(
-    Query$FetchCharacters$characters$info instance,
-    TRes Function(Query$FetchCharacters$characters$info) then,
-  ) = _CopyWithImpl$Query$FetchCharacters$characters$info;
+abstract class CopyWith$Query$FetchEpisodes$episodes$info<TRes> {
+  factory CopyWith$Query$FetchEpisodes$episodes$info(
+    Query$FetchEpisodes$episodes$info instance,
+    TRes Function(Query$FetchEpisodes$episodes$info) then,
+  ) = _CopyWithImpl$Query$FetchEpisodes$episodes$info;
 
-  factory CopyWith$Query$FetchCharacters$characters$info.stub(TRes res) =
-      _CopyWithStubImpl$Query$FetchCharacters$characters$info;
+  factory CopyWith$Query$FetchEpisodes$episodes$info.stub(TRes res) =
+      _CopyWithStubImpl$Query$FetchEpisodes$episodes$info;
 
   TRes call({
     int? count,
@@ -658,16 +650,16 @@ abstract class CopyWith$Query$FetchCharacters$characters$info<TRes> {
   });
 }
 
-class _CopyWithImpl$Query$FetchCharacters$characters$info<TRes>
-    implements CopyWith$Query$FetchCharacters$characters$info<TRes> {
-  _CopyWithImpl$Query$FetchCharacters$characters$info(
+class _CopyWithImpl$Query$FetchEpisodes$episodes$info<TRes>
+    implements CopyWith$Query$FetchEpisodes$episodes$info<TRes> {
+  _CopyWithImpl$Query$FetchEpisodes$episodes$info(
     this._instance,
     this._then,
   );
 
-  final Query$FetchCharacters$characters$info _instance;
+  final Query$FetchEpisodes$episodes$info _instance;
 
-  final TRes Function(Query$FetchCharacters$characters$info) _then;
+  final TRes Function(Query$FetchEpisodes$episodes$info) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -676,7 +668,7 @@ class _CopyWithImpl$Query$FetchCharacters$characters$info<TRes>
     Object? next = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$FetchCharacters$characters$info(
+      _then(Query$FetchEpisodes$episodes$info(
         count: count == _undefined || count == null
             ? _instance.count
             : (count as int),
@@ -688,9 +680,9 @@ class _CopyWithImpl$Query$FetchCharacters$characters$info<TRes>
       ));
 }
 
-class _CopyWithStubImpl$Query$FetchCharacters$characters$info<TRes>
-    implements CopyWith$Query$FetchCharacters$characters$info<TRes> {
-  _CopyWithStubImpl$Query$FetchCharacters$characters$info(this._res);
+class _CopyWithStubImpl$Query$FetchEpisodes$episodes$info<TRes>
+    implements CopyWith$Query$FetchEpisodes$episodes$info<TRes> {
+  _CopyWithStubImpl$Query$FetchEpisodes$episodes$info(this._res);
 
   TRes _res;
 
@@ -702,30 +694,27 @@ class _CopyWithStubImpl$Query$FetchCharacters$characters$info<TRes>
       _res;
 }
 
-class Query$FetchCharacters$characters$results {
-  Query$FetchCharacters$characters$results({
+class Query$FetchEpisodes$episodes$results {
+  Query$FetchEpisodes$episodes$results({
     required this.id,
     required this.name,
-    required this.status,
-    required this.species,
-    required this.image,
-    this.$__typename = 'Character',
+    this.air_date,
+    this.episode,
+    this.$__typename = 'Episode',
   });
 
-  factory Query$FetchCharacters$characters$results.fromJson(
+  factory Query$FetchEpisodes$episodes$results.fromJson(
       Map<String, dynamic> json) {
     final l$id = json['id'];
     final l$name = json['name'];
-    final l$status = json['status'];
-    final l$species = json['species'];
-    final l$image = json['image'];
+    final l$air_date = json['air_date'];
+    final l$episode = json['episode'];
     final l$$__typename = json['__typename'];
-    return Query$FetchCharacters$characters$results(
+    return Query$FetchEpisodes$episodes$results(
       id: (l$id as String),
       name: (l$name as String),
-      status: (l$status as String),
-      species: (l$species as String),
-      image: (l$image as String),
+      air_date: (l$air_date as String?),
+      episode: (l$episode as String?),
       $__typename: (l$$__typename as String),
     );
   }
@@ -734,11 +723,9 @@ class Query$FetchCharacters$characters$results {
 
   final String name;
 
-  final String status;
+  final String? air_date;
 
-  final String species;
-
-  final String image;
+  final String? episode;
 
   final String $__typename;
 
@@ -748,12 +735,10 @@ class Query$FetchCharacters$characters$results {
     _resultData['id'] = l$id;
     final l$name = name;
     _resultData['name'] = l$name;
-    final l$status = status;
-    _resultData['status'] = l$status;
-    final l$species = species;
-    _resultData['species'] = l$species;
-    final l$image = image;
-    _resultData['image'] = l$image;
+    final l$air_date = air_date;
+    _resultData['air_date'] = l$air_date;
+    final l$episode = episode;
+    _resultData['episode'] = l$episode;
     final l$$__typename = $__typename;
     _resultData['__typename'] = l$$__typename;
     return _resultData;
@@ -763,16 +748,14 @@ class Query$FetchCharacters$characters$results {
   int get hashCode {
     final l$id = id;
     final l$name = name;
-    final l$status = status;
-    final l$species = species;
-    final l$image = image;
+    final l$air_date = air_date;
+    final l$episode = episode;
     final l$$__typename = $__typename;
     return Object.hashAll([
       l$id,
       l$name,
-      l$status,
-      l$species,
-      l$image,
+      l$air_date,
+      l$episode,
       l$$__typename,
     ]);
   }
@@ -782,7 +765,7 @@ class Query$FetchCharacters$characters$results {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Query$FetchCharacters$characters$results ||
+    if (other is! Query$FetchEpisodes$episodes$results ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -796,19 +779,14 @@ class Query$FetchCharacters$characters$results {
     if (l$name != lOther$name) {
       return false;
     }
-    final l$status = status;
-    final lOther$status = other.status;
-    if (l$status != lOther$status) {
+    final l$air_date = air_date;
+    final lOther$air_date = other.air_date;
+    if (l$air_date != lOther$air_date) {
       return false;
     }
-    final l$species = species;
-    final lOther$species = other.species;
-    if (l$species != lOther$species) {
-      return false;
-    }
-    final l$image = image;
-    final lOther$image = other.image;
-    if (l$image != lOther$image) {
+    final l$episode = episode;
+    final lOther$episode = other.episode;
+    if (l$episode != lOther$episode) {
       return false;
     }
     final l$$__typename = $__typename;
@@ -820,88 +798,80 @@ class Query$FetchCharacters$characters$results {
   }
 }
 
-extension UtilityExtension$Query$FetchCharacters$characters$results
-    on Query$FetchCharacters$characters$results {
-  CopyWith$Query$FetchCharacters$characters$results<
-          Query$FetchCharacters$characters$results>
-      get copyWith => CopyWith$Query$FetchCharacters$characters$results(
+extension UtilityExtension$Query$FetchEpisodes$episodes$results
+    on Query$FetchEpisodes$episodes$results {
+  CopyWith$Query$FetchEpisodes$episodes$results<
+          Query$FetchEpisodes$episodes$results>
+      get copyWith => CopyWith$Query$FetchEpisodes$episodes$results(
             this,
             (i) => i,
           );
 }
 
-abstract class CopyWith$Query$FetchCharacters$characters$results<TRes> {
-  factory CopyWith$Query$FetchCharacters$characters$results(
-    Query$FetchCharacters$characters$results instance,
-    TRes Function(Query$FetchCharacters$characters$results) then,
-  ) = _CopyWithImpl$Query$FetchCharacters$characters$results;
+abstract class CopyWith$Query$FetchEpisodes$episodes$results<TRes> {
+  factory CopyWith$Query$FetchEpisodes$episodes$results(
+    Query$FetchEpisodes$episodes$results instance,
+    TRes Function(Query$FetchEpisodes$episodes$results) then,
+  ) = _CopyWithImpl$Query$FetchEpisodes$episodes$results;
 
-  factory CopyWith$Query$FetchCharacters$characters$results.stub(TRes res) =
-      _CopyWithStubImpl$Query$FetchCharacters$characters$results;
+  factory CopyWith$Query$FetchEpisodes$episodes$results.stub(TRes res) =
+      _CopyWithStubImpl$Query$FetchEpisodes$episodes$results;
 
   TRes call({
     String? id,
     String? name,
-    String? status,
-    String? species,
-    String? image,
+    String? air_date,
+    String? episode,
     String? $__typename,
   });
 }
 
-class _CopyWithImpl$Query$FetchCharacters$characters$results<TRes>
-    implements CopyWith$Query$FetchCharacters$characters$results<TRes> {
-  _CopyWithImpl$Query$FetchCharacters$characters$results(
+class _CopyWithImpl$Query$FetchEpisodes$episodes$results<TRes>
+    implements CopyWith$Query$FetchEpisodes$episodes$results<TRes> {
+  _CopyWithImpl$Query$FetchEpisodes$episodes$results(
     this._instance,
     this._then,
   );
 
-  final Query$FetchCharacters$characters$results _instance;
+  final Query$FetchEpisodes$episodes$results _instance;
 
-  final TRes Function(Query$FetchCharacters$characters$results) _then;
+  final TRes Function(Query$FetchEpisodes$episodes$results) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,
     Object? name = _undefined,
-    Object? status = _undefined,
-    Object? species = _undefined,
-    Object? image = _undefined,
+    Object? air_date = _undefined,
+    Object? episode = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$FetchCharacters$characters$results(
+      _then(Query$FetchEpisodes$episodes$results(
         id: id == _undefined || id == null ? _instance.id : (id as String),
         name: name == _undefined || name == null
             ? _instance.name
             : (name as String),
-        status: status == _undefined || status == null
-            ? _instance.status
-            : (status as String),
-        species: species == _undefined || species == null
-            ? _instance.species
-            : (species as String),
-        image: image == _undefined || image == null
-            ? _instance.image
-            : (image as String),
+        air_date:
+            air_date == _undefined ? _instance.air_date : (air_date as String?),
+        episode:
+            episode == _undefined ? _instance.episode : (episode as String?),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
       ));
 }
 
-class _CopyWithStubImpl$Query$FetchCharacters$characters$results<TRes>
-    implements CopyWith$Query$FetchCharacters$characters$results<TRes> {
-  _CopyWithStubImpl$Query$FetchCharacters$characters$results(this._res);
+class _CopyWithStubImpl$Query$FetchEpisodes$episodes$results<TRes>
+    implements CopyWith$Query$FetchEpisodes$episodes$results<TRes> {
+  _CopyWithStubImpl$Query$FetchEpisodes$episodes$results(this._res);
 
   TRes _res;
 
   call({
     String? id,
     String? name,
-    String? status,
-    String? species,
-    String? image,
+    String? air_date,
+    String? episode,
     String? $__typename,
   }) =>
       _res;

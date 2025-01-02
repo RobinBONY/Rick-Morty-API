@@ -1,18 +1,18 @@
 import 'package:gql/ast.dart';
 
-class Variables$Query$FetchCharacters {
-  factory Variables$Query$FetchCharacters({required int page}) =>
-      Variables$Query$FetchCharacters._({
+class Variables$Query$FetchLocations {
+  factory Variables$Query$FetchLocations({required int page}) =>
+      Variables$Query$FetchLocations._({
         r'page': page,
       });
 
-  Variables$Query$FetchCharacters._(this._$data);
+  Variables$Query$FetchLocations._(this._$data);
 
-  factory Variables$Query$FetchCharacters.fromJson(Map<String, dynamic> data) {
+  factory Variables$Query$FetchLocations.fromJson(Map<String, dynamic> data) {
     final result$data = <String, dynamic>{};
     final l$page = data['page'];
     result$data['page'] = (l$page as int);
-    return Variables$Query$FetchCharacters._(result$data);
+    return Variables$Query$FetchLocations._(result$data);
   }
 
   Map<String, dynamic> _$data;
@@ -26,8 +26,8 @@ class Variables$Query$FetchCharacters {
     return result$data;
   }
 
-  CopyWith$Variables$Query$FetchCharacters<Variables$Query$FetchCharacters>
-      get copyWith => CopyWith$Variables$Query$FetchCharacters(
+  CopyWith$Variables$Query$FetchLocations<Variables$Query$FetchLocations>
+      get copyWith => CopyWith$Variables$Query$FetchLocations(
             this,
             (i) => i,
           );
@@ -37,7 +37,7 @@ class Variables$Query$FetchCharacters {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Variables$Query$FetchCharacters ||
+    if (other is! Variables$Query$FetchLocations ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -56,73 +56,73 @@ class Variables$Query$FetchCharacters {
   }
 }
 
-abstract class CopyWith$Variables$Query$FetchCharacters<TRes> {
-  factory CopyWith$Variables$Query$FetchCharacters(
-    Variables$Query$FetchCharacters instance,
-    TRes Function(Variables$Query$FetchCharacters) then,
-  ) = _CopyWithImpl$Variables$Query$FetchCharacters;
+abstract class CopyWith$Variables$Query$FetchLocations<TRes> {
+  factory CopyWith$Variables$Query$FetchLocations(
+    Variables$Query$FetchLocations instance,
+    TRes Function(Variables$Query$FetchLocations) then,
+  ) = _CopyWithImpl$Variables$Query$FetchLocations;
 
-  factory CopyWith$Variables$Query$FetchCharacters.stub(TRes res) =
-      _CopyWithStubImpl$Variables$Query$FetchCharacters;
+  factory CopyWith$Variables$Query$FetchLocations.stub(TRes res) =
+      _CopyWithStubImpl$Variables$Query$FetchLocations;
 
   TRes call({int? page});
 }
 
-class _CopyWithImpl$Variables$Query$FetchCharacters<TRes>
-    implements CopyWith$Variables$Query$FetchCharacters<TRes> {
-  _CopyWithImpl$Variables$Query$FetchCharacters(
+class _CopyWithImpl$Variables$Query$FetchLocations<TRes>
+    implements CopyWith$Variables$Query$FetchLocations<TRes> {
+  _CopyWithImpl$Variables$Query$FetchLocations(
     this._instance,
     this._then,
   );
 
-  final Variables$Query$FetchCharacters _instance;
+  final Variables$Query$FetchLocations _instance;
 
-  final TRes Function(Variables$Query$FetchCharacters) _then;
+  final TRes Function(Variables$Query$FetchLocations) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? page = _undefined}) =>
-      _then(Variables$Query$FetchCharacters._({
+      _then(Variables$Query$FetchLocations._({
         ..._instance._$data,
         if (page != _undefined && page != null) 'page': (page as int),
       }));
 }
 
-class _CopyWithStubImpl$Variables$Query$FetchCharacters<TRes>
-    implements CopyWith$Variables$Query$FetchCharacters<TRes> {
-  _CopyWithStubImpl$Variables$Query$FetchCharacters(this._res);
+class _CopyWithStubImpl$Variables$Query$FetchLocations<TRes>
+    implements CopyWith$Variables$Query$FetchLocations<TRes> {
+  _CopyWithStubImpl$Variables$Query$FetchLocations(this._res);
 
   TRes _res;
 
   call({int? page}) => _res;
 }
 
-class Query$FetchCharacters {
-  Query$FetchCharacters({
-    this.characters,
+class Query$FetchLocations {
+  Query$FetchLocations({
+    this.locations,
     this.$__typename = 'Query',
   });
 
-  factory Query$FetchCharacters.fromJson(Map<String, dynamic> json) {
-    final l$characters = json['characters'];
+  factory Query$FetchLocations.fromJson(Map<String, dynamic> json) {
+    final l$locations = json['locations'];
     final l$$__typename = json['__typename'];
-    return Query$FetchCharacters(
-      characters: l$characters == null
+    return Query$FetchLocations(
+      locations: l$locations == null
           ? null
-          : Query$FetchCharacters$characters.fromJson(
-              (l$characters as Map<String, dynamic>)),
+          : Query$FetchLocations$locations.fromJson(
+              (l$locations as Map<String, dynamic>)),
       $__typename: (l$$__typename as String),
     );
   }
 
-  final Query$FetchCharacters$characters? characters;
+  final Query$FetchLocations$locations? locations;
 
   final String $__typename;
 
   Map<String, dynamic> toJson() {
     final _resultData = <String, dynamic>{};
-    final l$characters = characters;
-    _resultData['characters'] = l$characters?.toJson();
+    final l$locations = locations;
+    _resultData['locations'] = l$locations?.toJson();
     final l$$__typename = $__typename;
     _resultData['__typename'] = l$$__typename;
     return _resultData;
@@ -130,10 +130,10 @@ class Query$FetchCharacters {
 
   @override
   int get hashCode {
-    final l$characters = characters;
+    final l$locations = locations;
     final l$$__typename = $__typename;
     return Object.hashAll([
-      l$characters,
+      l$locations,
       l$$__typename,
     ]);
   }
@@ -143,12 +143,12 @@ class Query$FetchCharacters {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Query$FetchCharacters || runtimeType != other.runtimeType) {
+    if (other is! Query$FetchLocations || runtimeType != other.runtimeType) {
       return false;
     }
-    final l$characters = characters;
-    final lOther$characters = other.characters;
-    if (l$characters != lOther$characters) {
+    final l$locations = locations;
+    final lOther$locations = other.locations;
+    if (l$locations != lOther$locations) {
       return false;
     }
     final l$$__typename = $__typename;
@@ -160,85 +160,85 @@ class Query$FetchCharacters {
   }
 }
 
-extension UtilityExtension$Query$FetchCharacters on Query$FetchCharacters {
-  CopyWith$Query$FetchCharacters<Query$FetchCharacters> get copyWith =>
-      CopyWith$Query$FetchCharacters(
+extension UtilityExtension$Query$FetchLocations on Query$FetchLocations {
+  CopyWith$Query$FetchLocations<Query$FetchLocations> get copyWith =>
+      CopyWith$Query$FetchLocations(
         this,
         (i) => i,
       );
 }
 
-abstract class CopyWith$Query$FetchCharacters<TRes> {
-  factory CopyWith$Query$FetchCharacters(
-    Query$FetchCharacters instance,
-    TRes Function(Query$FetchCharacters) then,
-  ) = _CopyWithImpl$Query$FetchCharacters;
+abstract class CopyWith$Query$FetchLocations<TRes> {
+  factory CopyWith$Query$FetchLocations(
+    Query$FetchLocations instance,
+    TRes Function(Query$FetchLocations) then,
+  ) = _CopyWithImpl$Query$FetchLocations;
 
-  factory CopyWith$Query$FetchCharacters.stub(TRes res) =
-      _CopyWithStubImpl$Query$FetchCharacters;
+  factory CopyWith$Query$FetchLocations.stub(TRes res) =
+      _CopyWithStubImpl$Query$FetchLocations;
 
   TRes call({
-    Query$FetchCharacters$characters? characters,
+    Query$FetchLocations$locations? locations,
     String? $__typename,
   });
-  CopyWith$Query$FetchCharacters$characters<TRes> get characters;
+  CopyWith$Query$FetchLocations$locations<TRes> get locations;
 }
 
-class _CopyWithImpl$Query$FetchCharacters<TRes>
-    implements CopyWith$Query$FetchCharacters<TRes> {
-  _CopyWithImpl$Query$FetchCharacters(
+class _CopyWithImpl$Query$FetchLocations<TRes>
+    implements CopyWith$Query$FetchLocations<TRes> {
+  _CopyWithImpl$Query$FetchLocations(
     this._instance,
     this._then,
   );
 
-  final Query$FetchCharacters _instance;
+  final Query$FetchLocations _instance;
 
-  final TRes Function(Query$FetchCharacters) _then;
+  final TRes Function(Query$FetchLocations) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
-    Object? characters = _undefined,
+    Object? locations = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$FetchCharacters(
-        characters: characters == _undefined
-            ? _instance.characters
-            : (characters as Query$FetchCharacters$characters?),
+      _then(Query$FetchLocations(
+        locations: locations == _undefined
+            ? _instance.locations
+            : (locations as Query$FetchLocations$locations?),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
       ));
 
-  CopyWith$Query$FetchCharacters$characters<TRes> get characters {
-    final local$characters = _instance.characters;
-    return local$characters == null
-        ? CopyWith$Query$FetchCharacters$characters.stub(_then(_instance))
-        : CopyWith$Query$FetchCharacters$characters(
-            local$characters, (e) => call(characters: e));
+  CopyWith$Query$FetchLocations$locations<TRes> get locations {
+    final local$locations = _instance.locations;
+    return local$locations == null
+        ? CopyWith$Query$FetchLocations$locations.stub(_then(_instance))
+        : CopyWith$Query$FetchLocations$locations(
+            local$locations, (e) => call(locations: e));
   }
 }
 
-class _CopyWithStubImpl$Query$FetchCharacters<TRes>
-    implements CopyWith$Query$FetchCharacters<TRes> {
-  _CopyWithStubImpl$Query$FetchCharacters(this._res);
+class _CopyWithStubImpl$Query$FetchLocations<TRes>
+    implements CopyWith$Query$FetchLocations<TRes> {
+  _CopyWithStubImpl$Query$FetchLocations(this._res);
 
   TRes _res;
 
   call({
-    Query$FetchCharacters$characters? characters,
+    Query$FetchLocations$locations? locations,
     String? $__typename,
   }) =>
       _res;
 
-  CopyWith$Query$FetchCharacters$characters<TRes> get characters =>
-      CopyWith$Query$FetchCharacters$characters.stub(_res);
+  CopyWith$Query$FetchLocations$locations<TRes> get locations =>
+      CopyWith$Query$FetchLocations$locations.stub(_res);
 }
 
-const documentNodeQueryFetchCharacters = DocumentNode(definitions: [
+const documentNodeQueryFetchLocations = DocumentNode(definitions: [
   OperationDefinitionNode(
     type: OperationType.query,
-    name: NameNode(value: 'FetchCharacters'),
+    name: NameNode(value: 'FetchLocations'),
     variableDefinitions: [
       VariableDefinitionNode(
         variable: VariableNode(name: NameNode(value: 'page')),
@@ -253,7 +253,7 @@ const documentNodeQueryFetchCharacters = DocumentNode(definitions: [
     directives: [],
     selectionSet: SelectionSetNode(selections: [
       FieldNode(
-        name: NameNode(value: 'characters'),
+        name: NameNode(value: 'locations'),
         alias: null,
         arguments: [
           ArgumentNode(
@@ -313,22 +313,22 @@ const documentNodeQueryFetchCharacters = DocumentNode(definitions: [
                 selectionSet: null,
               ),
               FieldNode(
-                name: NameNode(value: 'status'),
-                alias: NameNode(value: 'status'),
+                name: NameNode(value: 'type'),
+                alias: NameNode(value: 'type'),
                 arguments: [],
                 directives: [],
                 selectionSet: null,
               ),
               FieldNode(
-                name: NameNode(value: 'species'),
-                alias: NameNode(value: 'species'),
+                name: NameNode(value: 'dimension'),
+                alias: NameNode(value: 'dimension'),
                 arguments: [],
                 directives: [],
                 selectionSet: null,
               ),
               FieldNode(
-                name: NameNode(value: 'image'),
-                alias: NameNode(value: 'image'),
+                name: NameNode(value: 'residents'),
+                alias: NameNode(value: 'residents'),
                 arguments: [],
                 directives: [],
                 selectionSet: null,
@@ -362,33 +362,33 @@ const documentNodeQueryFetchCharacters = DocumentNode(definitions: [
   ),
 ]);
 
-class Query$FetchCharacters$characters {
-  Query$FetchCharacters$characters({
+class Query$FetchLocations$locations {
+  Query$FetchLocations$locations({
     required this.info,
     this.results,
-    this.$__typename = 'ResponseCharacters',
+    this.$__typename = 'ResponseLocations',
   });
 
-  factory Query$FetchCharacters$characters.fromJson(Map<String, dynamic> json) {
+  factory Query$FetchLocations$locations.fromJson(Map<String, dynamic> json) {
     final l$info = json['info'];
     final l$results = json['results'];
     final l$$__typename = json['__typename'];
-    return Query$FetchCharacters$characters(
-      info: Query$FetchCharacters$characters$info.fromJson(
+    return Query$FetchLocations$locations(
+      info: Query$FetchLocations$locations$info.fromJson(
           (l$info as Map<String, dynamic>)),
       results: (l$results as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : Query$FetchCharacters$characters$results.fromJson(
+              : Query$FetchLocations$locations$results.fromJson(
                   (e as Map<String, dynamic>)))
           .toList(),
       $__typename: (l$$__typename as String),
     );
   }
 
-  final Query$FetchCharacters$characters$info info;
+  final Query$FetchLocations$locations$info info;
 
-  final List<Query$FetchCharacters$characters$results?>? results;
+  final List<Query$FetchLocations$locations$results?>? results;
 
   final String $__typename;
 
@@ -420,7 +420,7 @@ class Query$FetchCharacters$characters {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Query$FetchCharacters$characters ||
+    if (other is! Query$FetchLocations$locations ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -454,48 +454,48 @@ class Query$FetchCharacters$characters {
   }
 }
 
-extension UtilityExtension$Query$FetchCharacters$characters
-    on Query$FetchCharacters$characters {
-  CopyWith$Query$FetchCharacters$characters<Query$FetchCharacters$characters>
-      get copyWith => CopyWith$Query$FetchCharacters$characters(
+extension UtilityExtension$Query$FetchLocations$locations
+    on Query$FetchLocations$locations {
+  CopyWith$Query$FetchLocations$locations<Query$FetchLocations$locations>
+      get copyWith => CopyWith$Query$FetchLocations$locations(
             this,
             (i) => i,
           );
 }
 
-abstract class CopyWith$Query$FetchCharacters$characters<TRes> {
-  factory CopyWith$Query$FetchCharacters$characters(
-    Query$FetchCharacters$characters instance,
-    TRes Function(Query$FetchCharacters$characters) then,
-  ) = _CopyWithImpl$Query$FetchCharacters$characters;
+abstract class CopyWith$Query$FetchLocations$locations<TRes> {
+  factory CopyWith$Query$FetchLocations$locations(
+    Query$FetchLocations$locations instance,
+    TRes Function(Query$FetchLocations$locations) then,
+  ) = _CopyWithImpl$Query$FetchLocations$locations;
 
-  factory CopyWith$Query$FetchCharacters$characters.stub(TRes res) =
-      _CopyWithStubImpl$Query$FetchCharacters$characters;
+  factory CopyWith$Query$FetchLocations$locations.stub(TRes res) =
+      _CopyWithStubImpl$Query$FetchLocations$locations;
 
   TRes call({
-    Query$FetchCharacters$characters$info? info,
-    List<Query$FetchCharacters$characters$results?>? results,
+    Query$FetchLocations$locations$info? info,
+    List<Query$FetchLocations$locations$results?>? results,
     String? $__typename,
   });
-  CopyWith$Query$FetchCharacters$characters$info<TRes> get info;
+  CopyWith$Query$FetchLocations$locations$info<TRes> get info;
   TRes results(
-      Iterable<Query$FetchCharacters$characters$results?>? Function(
+      Iterable<Query$FetchLocations$locations$results?>? Function(
               Iterable<
-                  CopyWith$Query$FetchCharacters$characters$results<
-                      Query$FetchCharacters$characters$results>?>?)
+                  CopyWith$Query$FetchLocations$locations$results<
+                      Query$FetchLocations$locations$results>?>?)
           _fn);
 }
 
-class _CopyWithImpl$Query$FetchCharacters$characters<TRes>
-    implements CopyWith$Query$FetchCharacters$characters<TRes> {
-  _CopyWithImpl$Query$FetchCharacters$characters(
+class _CopyWithImpl$Query$FetchLocations$locations<TRes>
+    implements CopyWith$Query$FetchLocations$locations<TRes> {
+  _CopyWithImpl$Query$FetchLocations$locations(
     this._instance,
     this._then,
   );
 
-  final Query$FetchCharacters$characters _instance;
+  final Query$FetchLocations$locations _instance;
 
-  final TRes Function(Query$FetchCharacters$characters) _then;
+  final TRes Function(Query$FetchLocations$locations) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -504,71 +504,71 @@ class _CopyWithImpl$Query$FetchCharacters$characters<TRes>
     Object? results = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$FetchCharacters$characters(
+      _then(Query$FetchLocations$locations(
         info: info == _undefined || info == null
             ? _instance.info
-            : (info as Query$FetchCharacters$characters$info),
+            : (info as Query$FetchLocations$locations$info),
         results: results == _undefined
             ? _instance.results
-            : (results as List<Query$FetchCharacters$characters$results?>?),
+            : (results as List<Query$FetchLocations$locations$results?>?),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
       ));
 
-  CopyWith$Query$FetchCharacters$characters$info<TRes> get info {
+  CopyWith$Query$FetchLocations$locations$info<TRes> get info {
     final local$info = _instance.info;
-    return CopyWith$Query$FetchCharacters$characters$info(
+    return CopyWith$Query$FetchLocations$locations$info(
         local$info, (e) => call(info: e));
   }
 
   TRes results(
-          Iterable<Query$FetchCharacters$characters$results?>? Function(
+          Iterable<Query$FetchLocations$locations$results?>? Function(
                   Iterable<
-                      CopyWith$Query$FetchCharacters$characters$results<
-                          Query$FetchCharacters$characters$results>?>?)
+                      CopyWith$Query$FetchLocations$locations$results<
+                          Query$FetchLocations$locations$results>?>?)
               _fn) =>
       call(
           results: _fn(_instance.results?.map((e) => e == null
               ? null
-              : CopyWith$Query$FetchCharacters$characters$results(
+              : CopyWith$Query$FetchLocations$locations$results(
                   e,
                   (i) => i,
                 )))?.toList());
 }
 
-class _CopyWithStubImpl$Query$FetchCharacters$characters<TRes>
-    implements CopyWith$Query$FetchCharacters$characters<TRes> {
-  _CopyWithStubImpl$Query$FetchCharacters$characters(this._res);
+class _CopyWithStubImpl$Query$FetchLocations$locations<TRes>
+    implements CopyWith$Query$FetchLocations$locations<TRes> {
+  _CopyWithStubImpl$Query$FetchLocations$locations(this._res);
 
   TRes _res;
 
   call({
-    Query$FetchCharacters$characters$info? info,
-    List<Query$FetchCharacters$characters$results?>? results,
+    Query$FetchLocations$locations$info? info,
+    List<Query$FetchLocations$locations$results?>? results,
     String? $__typename,
   }) =>
       _res;
 
-  CopyWith$Query$FetchCharacters$characters$info<TRes> get info =>
-      CopyWith$Query$FetchCharacters$characters$info.stub(_res);
+  CopyWith$Query$FetchLocations$locations$info<TRes> get info =>
+      CopyWith$Query$FetchLocations$locations$info.stub(_res);
 
   results(_fn) => _res;
 }
 
-class Query$FetchCharacters$characters$info {
-  Query$FetchCharacters$characters$info({
+class Query$FetchLocations$locations$info {
+  Query$FetchLocations$locations$info({
     required this.count,
     required this.next,
     this.$__typename = 'Info',
   });
 
-  factory Query$FetchCharacters$characters$info.fromJson(
+  factory Query$FetchLocations$locations$info.fromJson(
       Map<String, dynamic> json) {
     final l$count = json['count'];
     final l$next = json['next'];
     final l$$__typename = json['__typename'];
-    return Query$FetchCharacters$characters$info(
+    return Query$FetchLocations$locations$info(
       count: (l$count as int),
       next: (l$next as int),
       $__typename: (l$$__typename as String),
@@ -609,7 +609,7 @@ class Query$FetchCharacters$characters$info {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Query$FetchCharacters$characters$info ||
+    if (other is! Query$FetchLocations$locations$info ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -632,24 +632,24 @@ class Query$FetchCharacters$characters$info {
   }
 }
 
-extension UtilityExtension$Query$FetchCharacters$characters$info
-    on Query$FetchCharacters$characters$info {
-  CopyWith$Query$FetchCharacters$characters$info<
-          Query$FetchCharacters$characters$info>
-      get copyWith => CopyWith$Query$FetchCharacters$characters$info(
+extension UtilityExtension$Query$FetchLocations$locations$info
+    on Query$FetchLocations$locations$info {
+  CopyWith$Query$FetchLocations$locations$info<
+          Query$FetchLocations$locations$info>
+      get copyWith => CopyWith$Query$FetchLocations$locations$info(
             this,
             (i) => i,
           );
 }
 
-abstract class CopyWith$Query$FetchCharacters$characters$info<TRes> {
-  factory CopyWith$Query$FetchCharacters$characters$info(
-    Query$FetchCharacters$characters$info instance,
-    TRes Function(Query$FetchCharacters$characters$info) then,
-  ) = _CopyWithImpl$Query$FetchCharacters$characters$info;
+abstract class CopyWith$Query$FetchLocations$locations$info<TRes> {
+  factory CopyWith$Query$FetchLocations$locations$info(
+    Query$FetchLocations$locations$info instance,
+    TRes Function(Query$FetchLocations$locations$info) then,
+  ) = _CopyWithImpl$Query$FetchLocations$locations$info;
 
-  factory CopyWith$Query$FetchCharacters$characters$info.stub(TRes res) =
-      _CopyWithStubImpl$Query$FetchCharacters$characters$info;
+  factory CopyWith$Query$FetchLocations$locations$info.stub(TRes res) =
+      _CopyWithStubImpl$Query$FetchLocations$locations$info;
 
   TRes call({
     int? count,
@@ -658,16 +658,16 @@ abstract class CopyWith$Query$FetchCharacters$characters$info<TRes> {
   });
 }
 
-class _CopyWithImpl$Query$FetchCharacters$characters$info<TRes>
-    implements CopyWith$Query$FetchCharacters$characters$info<TRes> {
-  _CopyWithImpl$Query$FetchCharacters$characters$info(
+class _CopyWithImpl$Query$FetchLocations$locations$info<TRes>
+    implements CopyWith$Query$FetchLocations$locations$info<TRes> {
+  _CopyWithImpl$Query$FetchLocations$locations$info(
     this._instance,
     this._then,
   );
 
-  final Query$FetchCharacters$characters$info _instance;
+  final Query$FetchLocations$locations$info _instance;
 
-  final TRes Function(Query$FetchCharacters$characters$info) _then;
+  final TRes Function(Query$FetchLocations$locations$info) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -676,7 +676,7 @@ class _CopyWithImpl$Query$FetchCharacters$characters$info<TRes>
     Object? next = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$FetchCharacters$characters$info(
+      _then(Query$FetchLocations$locations$info(
         count: count == _undefined || count == null
             ? _instance.count
             : (count as int),
@@ -688,9 +688,9 @@ class _CopyWithImpl$Query$FetchCharacters$characters$info<TRes>
       ));
 }
 
-class _CopyWithStubImpl$Query$FetchCharacters$characters$info<TRes>
-    implements CopyWith$Query$FetchCharacters$characters$info<TRes> {
-  _CopyWithStubImpl$Query$FetchCharacters$characters$info(this._res);
+class _CopyWithStubImpl$Query$FetchLocations$locations$info<TRes>
+    implements CopyWith$Query$FetchLocations$locations$info<TRes> {
+  _CopyWithStubImpl$Query$FetchLocations$locations$info(this._res);
 
   TRes _res;
 
@@ -702,30 +702,31 @@ class _CopyWithStubImpl$Query$FetchCharacters$characters$info<TRes>
       _res;
 }
 
-class Query$FetchCharacters$characters$results {
-  Query$FetchCharacters$characters$results({
+class Query$FetchLocations$locations$results {
+  Query$FetchLocations$locations$results({
     required this.id,
     required this.name,
-    required this.status,
-    required this.species,
-    required this.image,
-    this.$__typename = 'Character',
+    this.type,
+    this.dimension,
+    this.residents,
+    this.$__typename = 'Location',
   });
 
-  factory Query$FetchCharacters$characters$results.fromJson(
+  factory Query$FetchLocations$locations$results.fromJson(
       Map<String, dynamic> json) {
     final l$id = json['id'];
     final l$name = json['name'];
-    final l$status = json['status'];
-    final l$species = json['species'];
-    final l$image = json['image'];
+    final l$type = json['type'];
+    final l$dimension = json['dimension'];
+    final l$residents = json['residents'];
     final l$$__typename = json['__typename'];
-    return Query$FetchCharacters$characters$results(
+    return Query$FetchLocations$locations$results(
       id: (l$id as String),
       name: (l$name as String),
-      status: (l$status as String),
-      species: (l$species as String),
-      image: (l$image as String),
+      type: (l$type as String?),
+      dimension: (l$dimension as String?),
+      residents:
+          (l$residents as List<dynamic>?)?.map((e) => (e as String?)).toList(),
       $__typename: (l$$__typename as String),
     );
   }
@@ -734,11 +735,11 @@ class Query$FetchCharacters$characters$results {
 
   final String name;
 
-  final String status;
+  final String? type;
 
-  final String species;
+  final String? dimension;
 
-  final String image;
+  final List<String?>? residents;
 
   final String $__typename;
 
@@ -748,12 +749,12 @@ class Query$FetchCharacters$characters$results {
     _resultData['id'] = l$id;
     final l$name = name;
     _resultData['name'] = l$name;
-    final l$status = status;
-    _resultData['status'] = l$status;
-    final l$species = species;
-    _resultData['species'] = l$species;
-    final l$image = image;
-    _resultData['image'] = l$image;
+    final l$type = type;
+    _resultData['type'] = l$type;
+    final l$dimension = dimension;
+    _resultData['dimension'] = l$dimension;
+    final l$residents = residents;
+    _resultData['residents'] = l$residents?.map((e) => e).toList();
     final l$$__typename = $__typename;
     _resultData['__typename'] = l$$__typename;
     return _resultData;
@@ -763,16 +764,16 @@ class Query$FetchCharacters$characters$results {
   int get hashCode {
     final l$id = id;
     final l$name = name;
-    final l$status = status;
-    final l$species = species;
-    final l$image = image;
+    final l$type = type;
+    final l$dimension = dimension;
+    final l$residents = residents;
     final l$$__typename = $__typename;
     return Object.hashAll([
       l$id,
       l$name,
-      l$status,
-      l$species,
-      l$image,
+      l$type,
+      l$dimension,
+      l$residents == null ? null : Object.hashAll(l$residents.map((v) => v)),
       l$$__typename,
     ]);
   }
@@ -782,7 +783,7 @@ class Query$FetchCharacters$characters$results {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Query$FetchCharacters$characters$results ||
+    if (other is! Query$FetchLocations$locations$results ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -796,19 +797,30 @@ class Query$FetchCharacters$characters$results {
     if (l$name != lOther$name) {
       return false;
     }
-    final l$status = status;
-    final lOther$status = other.status;
-    if (l$status != lOther$status) {
+    final l$type = type;
+    final lOther$type = other.type;
+    if (l$type != lOther$type) {
       return false;
     }
-    final l$species = species;
-    final lOther$species = other.species;
-    if (l$species != lOther$species) {
+    final l$dimension = dimension;
+    final lOther$dimension = other.dimension;
+    if (l$dimension != lOther$dimension) {
       return false;
     }
-    final l$image = image;
-    final lOther$image = other.image;
-    if (l$image != lOther$image) {
+    final l$residents = residents;
+    final lOther$residents = other.residents;
+    if (l$residents != null && lOther$residents != null) {
+      if (l$residents.length != lOther$residents.length) {
+        return false;
+      }
+      for (int i = 0; i < l$residents.length; i++) {
+        final l$residents$entry = l$residents[i];
+        final lOther$residents$entry = lOther$residents[i];
+        if (l$residents$entry != lOther$residents$entry) {
+          return false;
+        }
+      }
+    } else if (l$residents != lOther$residents) {
       return false;
     }
     final l$$__typename = $__typename;
@@ -820,88 +832,86 @@ class Query$FetchCharacters$characters$results {
   }
 }
 
-extension UtilityExtension$Query$FetchCharacters$characters$results
-    on Query$FetchCharacters$characters$results {
-  CopyWith$Query$FetchCharacters$characters$results<
-          Query$FetchCharacters$characters$results>
-      get copyWith => CopyWith$Query$FetchCharacters$characters$results(
+extension UtilityExtension$Query$FetchLocations$locations$results
+    on Query$FetchLocations$locations$results {
+  CopyWith$Query$FetchLocations$locations$results<
+          Query$FetchLocations$locations$results>
+      get copyWith => CopyWith$Query$FetchLocations$locations$results(
             this,
             (i) => i,
           );
 }
 
-abstract class CopyWith$Query$FetchCharacters$characters$results<TRes> {
-  factory CopyWith$Query$FetchCharacters$characters$results(
-    Query$FetchCharacters$characters$results instance,
-    TRes Function(Query$FetchCharacters$characters$results) then,
-  ) = _CopyWithImpl$Query$FetchCharacters$characters$results;
+abstract class CopyWith$Query$FetchLocations$locations$results<TRes> {
+  factory CopyWith$Query$FetchLocations$locations$results(
+    Query$FetchLocations$locations$results instance,
+    TRes Function(Query$FetchLocations$locations$results) then,
+  ) = _CopyWithImpl$Query$FetchLocations$locations$results;
 
-  factory CopyWith$Query$FetchCharacters$characters$results.stub(TRes res) =
-      _CopyWithStubImpl$Query$FetchCharacters$characters$results;
+  factory CopyWith$Query$FetchLocations$locations$results.stub(TRes res) =
+      _CopyWithStubImpl$Query$FetchLocations$locations$results;
 
   TRes call({
     String? id,
     String? name,
-    String? status,
-    String? species,
-    String? image,
+    String? type,
+    String? dimension,
+    List<String?>? residents,
     String? $__typename,
   });
 }
 
-class _CopyWithImpl$Query$FetchCharacters$characters$results<TRes>
-    implements CopyWith$Query$FetchCharacters$characters$results<TRes> {
-  _CopyWithImpl$Query$FetchCharacters$characters$results(
+class _CopyWithImpl$Query$FetchLocations$locations$results<TRes>
+    implements CopyWith$Query$FetchLocations$locations$results<TRes> {
+  _CopyWithImpl$Query$FetchLocations$locations$results(
     this._instance,
     this._then,
   );
 
-  final Query$FetchCharacters$characters$results _instance;
+  final Query$FetchLocations$locations$results _instance;
 
-  final TRes Function(Query$FetchCharacters$characters$results) _then;
+  final TRes Function(Query$FetchLocations$locations$results) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? id = _undefined,
     Object? name = _undefined,
-    Object? status = _undefined,
-    Object? species = _undefined,
-    Object? image = _undefined,
+    Object? type = _undefined,
+    Object? dimension = _undefined,
+    Object? residents = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$FetchCharacters$characters$results(
+      _then(Query$FetchLocations$locations$results(
         id: id == _undefined || id == null ? _instance.id : (id as String),
         name: name == _undefined || name == null
             ? _instance.name
             : (name as String),
-        status: status == _undefined || status == null
-            ? _instance.status
-            : (status as String),
-        species: species == _undefined || species == null
-            ? _instance.species
-            : (species as String),
-        image: image == _undefined || image == null
-            ? _instance.image
-            : (image as String),
+        type: type == _undefined ? _instance.type : (type as String?),
+        dimension: dimension == _undefined
+            ? _instance.dimension
+            : (dimension as String?),
+        residents: residents == _undefined
+            ? _instance.residents
+            : (residents as List<String?>?),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
       ));
 }
 
-class _CopyWithStubImpl$Query$FetchCharacters$characters$results<TRes>
-    implements CopyWith$Query$FetchCharacters$characters$results<TRes> {
-  _CopyWithStubImpl$Query$FetchCharacters$characters$results(this._res);
+class _CopyWithStubImpl$Query$FetchLocations$locations$results<TRes>
+    implements CopyWith$Query$FetchLocations$locations$results<TRes> {
+  _CopyWithStubImpl$Query$FetchLocations$locations$results(this._res);
 
   TRes _res;
 
   call({
     String? id,
     String? name,
-    String? status,
-    String? species,
-    String? image,
+    String? type,
+    String? dimension,
+    List<String?>? residents,
     String? $__typename,
   }) =>
       _res;

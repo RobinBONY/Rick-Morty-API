@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/router/router.dart';
-import 'package:flutter_application/src/models/character.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
@@ -31,15 +30,15 @@ class _MyAppState extends State<MyApp> {
   );
 
   late final GoRouter _router;
-  var favorites = <Character>[];
+  // var favorites = <Character>[];
 
-  void toggleFavorite([Character? character]) {
-    if (favorites.contains(character)) {
-      favorites.remove(character);
-    } else if (character != null) {
-      favorites.add(character);
-    }
-  }
+  // void toggleFavorite([Character? character]) {
+  //   if (favorites.contains(character)) {
+  //     favorites.remove(character);
+  //   } else if (character != null) {
+  //     favorites.add(character);
+  //   }
+  // }
 
   @override
   void initState() {
