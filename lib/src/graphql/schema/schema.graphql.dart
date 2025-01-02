@@ -1,3 +1,143 @@
+class Input$FilterEpisode {
+  factory Input$FilterEpisode({
+    String? name,
+    String? episode,
+  }) =>
+      Input$FilterEpisode._({
+        if (name != null) r'name': name,
+        if (episode != null) r'episode': episode,
+      });
+
+  Input$FilterEpisode._(this._$data);
+
+  factory Input$FilterEpisode.fromJson(Map<String, dynamic> data) {
+    final result$data = <String, dynamic>{};
+    if (data.containsKey('name')) {
+      final l$name = data['name'];
+      result$data['name'] = (l$name as String?);
+    }
+    if (data.containsKey('episode')) {
+      final l$episode = data['episode'];
+      result$data['episode'] = (l$episode as String?);
+    }
+    return Input$FilterEpisode._(result$data);
+  }
+
+  Map<String, dynamic> _$data;
+
+  String? get name => (_$data['name'] as String?);
+
+  String? get episode => (_$data['episode'] as String?);
+
+  Map<String, dynamic> toJson() {
+    final result$data = <String, dynamic>{};
+    if (_$data.containsKey('name')) {
+      final l$name = name;
+      result$data['name'] = l$name;
+    }
+    if (_$data.containsKey('episode')) {
+      final l$episode = episode;
+      result$data['episode'] = l$episode;
+    }
+    return result$data;
+  }
+
+  CopyWith$Input$FilterEpisode<Input$FilterEpisode> get copyWith =>
+      CopyWith$Input$FilterEpisode(
+        this,
+        (i) => i,
+      );
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (other is! Input$FilterEpisode || runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$name = name;
+    final lOther$name = other.name;
+    if (_$data.containsKey('name') != other._$data.containsKey('name')) {
+      return false;
+    }
+    if (l$name != lOther$name) {
+      return false;
+    }
+    final l$episode = episode;
+    final lOther$episode = other.episode;
+    if (_$data.containsKey('episode') != other._$data.containsKey('episode')) {
+      return false;
+    }
+    if (l$episode != lOther$episode) {
+      return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode {
+    final l$name = name;
+    final l$episode = episode;
+    return Object.hashAll([
+      _$data.containsKey('name') ? l$name : const {},
+      _$data.containsKey('episode') ? l$episode : const {},
+    ]);
+  }
+}
+
+abstract class CopyWith$Input$FilterEpisode<TRes> {
+  factory CopyWith$Input$FilterEpisode(
+    Input$FilterEpisode instance,
+    TRes Function(Input$FilterEpisode) then,
+  ) = _CopyWithImpl$Input$FilterEpisode;
+
+  factory CopyWith$Input$FilterEpisode.stub(TRes res) =
+      _CopyWithStubImpl$Input$FilterEpisode;
+
+  TRes call({
+    String? name,
+    String? episode,
+  });
+}
+
+class _CopyWithImpl$Input$FilterEpisode<TRes>
+    implements CopyWith$Input$FilterEpisode<TRes> {
+  _CopyWithImpl$Input$FilterEpisode(
+    this._instance,
+    this._then,
+  );
+
+  final Input$FilterEpisode _instance;
+
+  final TRes Function(Input$FilterEpisode) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? name = _undefined,
+    Object? episode = _undefined,
+  }) =>
+      _then(Input$FilterEpisode._({
+        ..._instance._$data,
+        if (name != _undefined) 'name': (name as String?),
+        if (episode != _undefined) 'episode': (episode as String?),
+      }));
+}
+
+class _CopyWithStubImpl$Input$FilterEpisode<TRes>
+    implements CopyWith$Input$FilterEpisode<TRes> {
+  _CopyWithStubImpl$Input$FilterEpisode(this._res);
+
+  TRes _res;
+
+  call({
+    String? name,
+    String? episode,
+  }) =>
+      _res;
+}
+
 enum Enum$__TypeKind {
   SCALAR,
   OBJECT,

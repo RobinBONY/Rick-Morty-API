@@ -327,13 +327,6 @@ const documentNodeQueryFetchLocations = DocumentNode(definitions: [
                 selectionSet: null,
               ),
               FieldNode(
-                name: NameNode(value: 'residents'),
-                alias: NameNode(value: 'residents'),
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
                 name: NameNode(value: '__typename'),
                 alias: null,
                 arguments: [],
@@ -708,7 +701,6 @@ class Query$FetchLocations$locations$results {
     required this.name,
     this.type,
     this.dimension,
-    this.residents,
     this.$__typename = 'Location',
   });
 
@@ -718,15 +710,12 @@ class Query$FetchLocations$locations$results {
     final l$name = json['name'];
     final l$type = json['type'];
     final l$dimension = json['dimension'];
-    final l$residents = json['residents'];
     final l$$__typename = json['__typename'];
     return Query$FetchLocations$locations$results(
       id: (l$id as String),
       name: (l$name as String),
       type: (l$type as String?),
       dimension: (l$dimension as String?),
-      residents:
-          (l$residents as List<dynamic>?)?.map((e) => (e as String?)).toList(),
       $__typename: (l$$__typename as String),
     );
   }
@@ -738,8 +727,6 @@ class Query$FetchLocations$locations$results {
   final String? type;
 
   final String? dimension;
-
-  final List<String?>? residents;
 
   final String $__typename;
 
@@ -753,8 +740,6 @@ class Query$FetchLocations$locations$results {
     _resultData['type'] = l$type;
     final l$dimension = dimension;
     _resultData['dimension'] = l$dimension;
-    final l$residents = residents;
-    _resultData['residents'] = l$residents?.map((e) => e).toList();
     final l$$__typename = $__typename;
     _resultData['__typename'] = l$$__typename;
     return _resultData;
@@ -766,14 +751,12 @@ class Query$FetchLocations$locations$results {
     final l$name = name;
     final l$type = type;
     final l$dimension = dimension;
-    final l$residents = residents;
     final l$$__typename = $__typename;
     return Object.hashAll([
       l$id,
       l$name,
       l$type,
       l$dimension,
-      l$residents == null ? null : Object.hashAll(l$residents.map((v) => v)),
       l$$__typename,
     ]);
   }
@@ -805,22 +788,6 @@ class Query$FetchLocations$locations$results {
     final l$dimension = dimension;
     final lOther$dimension = other.dimension;
     if (l$dimension != lOther$dimension) {
-      return false;
-    }
-    final l$residents = residents;
-    final lOther$residents = other.residents;
-    if (l$residents != null && lOther$residents != null) {
-      if (l$residents.length != lOther$residents.length) {
-        return false;
-      }
-      for (int i = 0; i < l$residents.length; i++) {
-        final l$residents$entry = l$residents[i];
-        final lOther$residents$entry = lOther$residents[i];
-        if (l$residents$entry != lOther$residents$entry) {
-          return false;
-        }
-      }
-    } else if (l$residents != lOther$residents) {
       return false;
     }
     final l$$__typename = $__typename;
@@ -856,7 +823,6 @@ abstract class CopyWith$Query$FetchLocations$locations$results<TRes> {
     String? name,
     String? type,
     String? dimension,
-    List<String?>? residents,
     String? $__typename,
   });
 }
@@ -879,7 +845,6 @@ class _CopyWithImpl$Query$FetchLocations$locations$results<TRes>
     Object? name = _undefined,
     Object? type = _undefined,
     Object? dimension = _undefined,
-    Object? residents = _undefined,
     Object? $__typename = _undefined,
   }) =>
       _then(Query$FetchLocations$locations$results(
@@ -891,9 +856,6 @@ class _CopyWithImpl$Query$FetchLocations$locations$results<TRes>
         dimension: dimension == _undefined
             ? _instance.dimension
             : (dimension as String?),
-        residents: residents == _undefined
-            ? _instance.residents
-            : (residents as List<String?>?),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
@@ -911,7 +873,6 @@ class _CopyWithStubImpl$Query$FetchLocations$locations$results<TRes>
     String? name,
     String? type,
     String? dimension,
-    List<String?>? residents,
     String? $__typename,
   }) =>
       _res;

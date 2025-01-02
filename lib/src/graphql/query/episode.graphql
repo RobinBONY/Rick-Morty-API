@@ -1,11 +1,7 @@
 # .lib/src/grapql/query/episode.graphql
 
-query FetchEpisodes($page: Int!) {
-  episodes(page: $page) {
-    info {
-      count: count
-      next: next
-    }
+query FetchSeason($filter: FilterEpisode!) {
+  episodes(filter: $filter) {
     results {
       id: id
       name: name
