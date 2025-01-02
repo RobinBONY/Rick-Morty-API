@@ -1,0 +1,16 @@
+# .lib/src/grapql/query/location.graphql
+
+query FetchLocations($page: Int!) {
+  locations(page: $page) {
+    info {
+      count: count
+      next: next
+    }
+    results {
+      id: id
+      name: name
+      type: type
+      dimension: dimension
+    }
+  }
+}

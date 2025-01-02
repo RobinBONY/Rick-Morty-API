@@ -1,0 +1,12 @@
+# .lib/src/grapql/query/episode.graphql
+
+query FetchSeason($filter: FilterEpisode!) {
+  episodes(filter: $filter) {
+    results {
+      id: id
+      name: name
+      air_date: air_date
+      episode: episode
+    }
+  }
+}
