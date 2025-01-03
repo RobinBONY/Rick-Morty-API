@@ -22,6 +22,7 @@ dependencies:
   graphql_flutter: ^5.2.0-beta.8
   graphql: ^5.2.0-beta.10
   flutter_hooks: ^0.20.5
+  flex_color_scheme: ^8.1.0
 
 dev_dependencies:
   flutter_test:

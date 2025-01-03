@@ -332,7 +332,7 @@ const documentNodeQueryFetchSeason = DocumentNode(definitions: [
 class Query$FetchSeason$episodes {
   Query$FetchSeason$episodes({
     this.results,
-    this.$__typename = 'ResponseEpisodes',
+    this.$__typename = 'Episodes',
   });
 
   factory Query$FetchSeason$episodes.fromJson(Map<String, dynamic> json) {
@@ -494,8 +494,8 @@ class _CopyWithStubImpl$Query$FetchSeason$episodes<TRes>
 
 class Query$FetchSeason$episodes$results {
   Query$FetchSeason$episodes$results({
-    required this.id,
-    required this.name,
+    this.id,
+    this.name,
     this.air_date,
     this.episode,
     this.$__typename = 'Episode',
@@ -509,17 +509,17 @@ class Query$FetchSeason$episodes$results {
     final l$episode = json['episode'];
     final l$$__typename = json['__typename'];
     return Query$FetchSeason$episodes$results(
-      id: (l$id as String),
-      name: (l$name as String),
+      id: (l$id as String?),
+      name: (l$name as String?),
       air_date: (l$air_date as String?),
       episode: (l$episode as String?),
       $__typename: (l$$__typename as String),
     );
   }
 
-  final String id;
+  final String? id;
 
-  final String name;
+  final String? name;
 
   final String? air_date;
 
@@ -645,10 +645,8 @@ class _CopyWithImpl$Query$FetchSeason$episodes$results<TRes>
     Object? $__typename = _undefined,
   }) =>
       _then(Query$FetchSeason$episodes$results(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
+        id: id == _undefined ? _instance.id : (id as String?),
+        name: name == _undefined ? _instance.name : (name as String?),
         air_date:
             air_date == _undefined ? _instance.air_date : (air_date as String?),
         episode:

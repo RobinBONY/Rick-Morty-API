@@ -357,9 +357,9 @@ const documentNodeQueryFetchLocations = DocumentNode(definitions: [
 
 class Query$FetchLocations$locations {
   Query$FetchLocations$locations({
-    required this.info,
+    this.info,
     this.results,
-    this.$__typename = 'ResponseLocations',
+    this.$__typename = 'Locations',
   });
 
   factory Query$FetchLocations$locations.fromJson(Map<String, dynamic> json) {
@@ -367,8 +367,10 @@ class Query$FetchLocations$locations {
     final l$results = json['results'];
     final l$$__typename = json['__typename'];
     return Query$FetchLocations$locations(
-      info: Query$FetchLocations$locations$info.fromJson(
-          (l$info as Map<String, dynamic>)),
+      info: l$info == null
+          ? null
+          : Query$FetchLocations$locations$info.fromJson(
+              (l$info as Map<String, dynamic>)),
       results: (l$results as List<dynamic>?)
           ?.map((e) => e == null
               ? null
@@ -379,7 +381,7 @@ class Query$FetchLocations$locations {
     );
   }
 
-  final Query$FetchLocations$locations$info info;
+  final Query$FetchLocations$locations$info? info;
 
   final List<Query$FetchLocations$locations$results?>? results;
 
@@ -388,7 +390,7 @@ class Query$FetchLocations$locations {
   Map<String, dynamic> toJson() {
     final _resultData = <String, dynamic>{};
     final l$info = info;
-    _resultData['info'] = l$info.toJson();
+    _resultData['info'] = l$info?.toJson();
     final l$results = results;
     _resultData['results'] = l$results?.map((e) => e?.toJson()).toList();
     final l$$__typename = $__typename;
@@ -498,9 +500,9 @@ class _CopyWithImpl$Query$FetchLocations$locations<TRes>
     Object? $__typename = _undefined,
   }) =>
       _then(Query$FetchLocations$locations(
-        info: info == _undefined || info == null
+        info: info == _undefined
             ? _instance.info
-            : (info as Query$FetchLocations$locations$info),
+            : (info as Query$FetchLocations$locations$info?),
         results: results == _undefined
             ? _instance.results
             : (results as List<Query$FetchLocations$locations$results?>?),
@@ -511,8 +513,10 @@ class _CopyWithImpl$Query$FetchLocations$locations<TRes>
 
   CopyWith$Query$FetchLocations$locations$info<TRes> get info {
     final local$info = _instance.info;
-    return CopyWith$Query$FetchLocations$locations$info(
-        local$info, (e) => call(info: e));
+    return local$info == null
+        ? CopyWith$Query$FetchLocations$locations$info.stub(_then(_instance))
+        : CopyWith$Query$FetchLocations$locations$info(
+            local$info, (e) => call(info: e));
   }
 
   TRes results(
@@ -551,8 +555,8 @@ class _CopyWithStubImpl$Query$FetchLocations$locations<TRes>
 
 class Query$FetchLocations$locations$info {
   Query$FetchLocations$locations$info({
-    required this.count,
-    required this.next,
+    this.count,
+    this.next,
     this.$__typename = 'Info',
   });
 
@@ -562,15 +566,15 @@ class Query$FetchLocations$locations$info {
     final l$next = json['next'];
     final l$$__typename = json['__typename'];
     return Query$FetchLocations$locations$info(
-      count: (l$count as int),
-      next: (l$next as int),
+      count: (l$count as int?),
+      next: (l$next as int?),
       $__typename: (l$$__typename as String),
     );
   }
 
-  final int count;
+  final int? count;
 
-  final int next;
+  final int? next;
 
   final String $__typename;
 
@@ -670,11 +674,8 @@ class _CopyWithImpl$Query$FetchLocations$locations$info<TRes>
     Object? $__typename = _undefined,
   }) =>
       _then(Query$FetchLocations$locations$info(
-        count: count == _undefined || count == null
-            ? _instance.count
-            : (count as int),
-        next:
-            next == _undefined || next == null ? _instance.next : (next as int),
+        count: count == _undefined ? _instance.count : (count as int?),
+        next: next == _undefined ? _instance.next : (next as int?),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
@@ -697,8 +698,8 @@ class _CopyWithStubImpl$Query$FetchLocations$locations$info<TRes>
 
 class Query$FetchLocations$locations$results {
   Query$FetchLocations$locations$results({
-    required this.id,
-    required this.name,
+    this.id,
+    this.name,
     this.type,
     this.dimension,
     this.$__typename = 'Location',
@@ -712,17 +713,17 @@ class Query$FetchLocations$locations$results {
     final l$dimension = json['dimension'];
     final l$$__typename = json['__typename'];
     return Query$FetchLocations$locations$results(
-      id: (l$id as String),
-      name: (l$name as String),
+      id: (l$id as String?),
+      name: (l$name as String?),
       type: (l$type as String?),
       dimension: (l$dimension as String?),
       $__typename: (l$$__typename as String),
     );
   }
 
-  final String id;
+  final String? id;
 
-  final String name;
+  final String? name;
 
   final String? type;
 
@@ -848,10 +849,8 @@ class _CopyWithImpl$Query$FetchLocations$locations$results<TRes>
     Object? $__typename = _undefined,
   }) =>
       _then(Query$FetchLocations$locations$results(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
+        id: id == _undefined ? _instance.id : (id as String?),
+        name: name == _undefined ? _instance.name : (name as String?),
         type: type == _undefined ? _instance.type : (type as String?),
         dimension: dimension == _undefined
             ? _instance.dimension

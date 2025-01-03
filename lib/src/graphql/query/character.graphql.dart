@@ -364,9 +364,9 @@ const documentNodeQueryFetchCharacters = DocumentNode(definitions: [
 
 class Query$FetchCharacters$characters {
   Query$FetchCharacters$characters({
-    required this.info,
+    this.info,
     this.results,
-    this.$__typename = 'ResponseCharacters',
+    this.$__typename = 'Characters',
   });
 
   factory Query$FetchCharacters$characters.fromJson(Map<String, dynamic> json) {
@@ -374,8 +374,10 @@ class Query$FetchCharacters$characters {
     final l$results = json['results'];
     final l$$__typename = json['__typename'];
     return Query$FetchCharacters$characters(
-      info: Query$FetchCharacters$characters$info.fromJson(
-          (l$info as Map<String, dynamic>)),
+      info: l$info == null
+          ? null
+          : Query$FetchCharacters$characters$info.fromJson(
+              (l$info as Map<String, dynamic>)),
       results: (l$results as List<dynamic>?)
           ?.map((e) => e == null
               ? null
@@ -386,7 +388,7 @@ class Query$FetchCharacters$characters {
     );
   }
 
-  final Query$FetchCharacters$characters$info info;
+  final Query$FetchCharacters$characters$info? info;
 
   final List<Query$FetchCharacters$characters$results?>? results;
 
@@ -395,7 +397,7 @@ class Query$FetchCharacters$characters {
   Map<String, dynamic> toJson() {
     final _resultData = <String, dynamic>{};
     final l$info = info;
-    _resultData['info'] = l$info.toJson();
+    _resultData['info'] = l$info?.toJson();
     final l$results = results;
     _resultData['results'] = l$results?.map((e) => e?.toJson()).toList();
     final l$$__typename = $__typename;
@@ -505,9 +507,9 @@ class _CopyWithImpl$Query$FetchCharacters$characters<TRes>
     Object? $__typename = _undefined,
   }) =>
       _then(Query$FetchCharacters$characters(
-        info: info == _undefined || info == null
+        info: info == _undefined
             ? _instance.info
-            : (info as Query$FetchCharacters$characters$info),
+            : (info as Query$FetchCharacters$characters$info?),
         results: results == _undefined
             ? _instance.results
             : (results as List<Query$FetchCharacters$characters$results?>?),
@@ -518,8 +520,10 @@ class _CopyWithImpl$Query$FetchCharacters$characters<TRes>
 
   CopyWith$Query$FetchCharacters$characters$info<TRes> get info {
     final local$info = _instance.info;
-    return CopyWith$Query$FetchCharacters$characters$info(
-        local$info, (e) => call(info: e));
+    return local$info == null
+        ? CopyWith$Query$FetchCharacters$characters$info.stub(_then(_instance))
+        : CopyWith$Query$FetchCharacters$characters$info(
+            local$info, (e) => call(info: e));
   }
 
   TRes results(
@@ -558,8 +562,8 @@ class _CopyWithStubImpl$Query$FetchCharacters$characters<TRes>
 
 class Query$FetchCharacters$characters$info {
   Query$FetchCharacters$characters$info({
-    required this.count,
-    required this.next,
+    this.count,
+    this.next,
     this.$__typename = 'Info',
   });
 
@@ -569,15 +573,15 @@ class Query$FetchCharacters$characters$info {
     final l$next = json['next'];
     final l$$__typename = json['__typename'];
     return Query$FetchCharacters$characters$info(
-      count: (l$count as int),
-      next: (l$next as int),
+      count: (l$count as int?),
+      next: (l$next as int?),
       $__typename: (l$$__typename as String),
     );
   }
 
-  final int count;
+  final int? count;
 
-  final int next;
+  final int? next;
 
   final String $__typename;
 
@@ -677,11 +681,8 @@ class _CopyWithImpl$Query$FetchCharacters$characters$info<TRes>
     Object? $__typename = _undefined,
   }) =>
       _then(Query$FetchCharacters$characters$info(
-        count: count == _undefined || count == null
-            ? _instance.count
-            : (count as int),
-        next:
-            next == _undefined || next == null ? _instance.next : (next as int),
+        count: count == _undefined ? _instance.count : (count as int?),
+        next: next == _undefined ? _instance.next : (next as int?),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
@@ -704,11 +705,11 @@ class _CopyWithStubImpl$Query$FetchCharacters$characters$info<TRes>
 
 class Query$FetchCharacters$characters$results {
   Query$FetchCharacters$characters$results({
-    required this.id,
-    required this.name,
-    required this.status,
-    required this.species,
-    required this.image,
+    this.id,
+    this.name,
+    this.status,
+    this.species,
+    this.image,
     this.$__typename = 'Character',
   });
 
@@ -721,24 +722,24 @@ class Query$FetchCharacters$characters$results {
     final l$image = json['image'];
     final l$$__typename = json['__typename'];
     return Query$FetchCharacters$characters$results(
-      id: (l$id as String),
-      name: (l$name as String),
-      status: (l$status as String),
-      species: (l$species as String),
-      image: (l$image as String),
+      id: (l$id as String?),
+      name: (l$name as String?),
+      status: (l$status as String?),
+      species: (l$species as String?),
+      image: (l$image as String?),
       $__typename: (l$$__typename as String),
     );
   }
 
-  final String id;
+  final String? id;
 
-  final String name;
+  final String? name;
 
-  final String status;
+  final String? status;
 
-  final String species;
+  final String? species;
 
-  final String image;
+  final String? image;
 
   final String $__typename;
 
@@ -871,19 +872,12 @@ class _CopyWithImpl$Query$FetchCharacters$characters$results<TRes>
     Object? $__typename = _undefined,
   }) =>
       _then(Query$FetchCharacters$characters$results(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        status: status == _undefined || status == null
-            ? _instance.status
-            : (status as String),
-        species: species == _undefined || species == null
-            ? _instance.species
-            : (species as String),
-        image: image == _undefined || image == null
-            ? _instance.image
-            : (image as String),
+        id: id == _undefined ? _instance.id : (id as String?),
+        name: name == _undefined ? _instance.name : (name as String?),
+        status: status == _undefined ? _instance.status : (status as String?),
+        species:
+            species == _undefined ? _instance.species : (species as String?),
+        image: image == _undefined ? _instance.image : (image as String?),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
